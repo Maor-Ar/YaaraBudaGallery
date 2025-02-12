@@ -3,6 +3,17 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
 import { Artwork } from './artwork.service';
 
+  // Contact form methods to be implemented with Firebase Functions or Firestore
+  export interface ContactFormData {
+    name: string;
+    email: string;
+    phone?: string;
+    subject: string;
+    message: string;
+    artworkId?: number;
+  }
+
+
 // This is a mock Firebase service that will be replaced with actual Firebase implementation later
 @Injectable({
   providedIn: 'root'
@@ -70,27 +81,18 @@ export class FirebaseService {
     return Promise.resolve();
   }
 
-  // Contact form methods to be implemented with Firebase Functions or Firestore
-  export interface ContactFormData {
-    name: string;
-    email: string;
-    phone?: string;
-    subject: string;
-    message: string;
-    artworkId?: number;
-  }
 
-  async submitContactForm(formData: ContactFormData): Promise<void> {
-    // Mock contact form submission - replace with actual Firebase function
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        console.log('Contact form submitted:', formData);
-        if (Math.random() > 0.1) { // 90% success rate
-          resolve();
-        } else {
-          reject(new Error('Failed to submit form'));
-        }
-      }, 2000);
-    });
-  }
-}
+//   async submitContactForm(formData: ContactFormData): Promise<void> {
+//     // Mock contact form submission - replace with actual Firebase function
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         console.log('Contact form submitted:', formData);
+//         if (Math.random() > 0.1) { // 90% success rate
+//           resolve();
+//         } else {
+//           reject(new Error('Failed to submit form'));
+//         }
+//       }, 2000);
+//     });
+//   }
+// }

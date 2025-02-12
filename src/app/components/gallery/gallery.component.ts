@@ -4,10 +4,9 @@ import { ArtworkService, Artwork } from '../../services/artwork.service';
 import { TranslationService } from '../../services/translation.service';
 
 @Component({
-  selector: 'app-gallery',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-gallery',
+    imports: [CommonModule],
+    template: `
     <section class="gallery-section" [class.rtl]="isRtl">
       <div class="section-header">
         <h2>{{ translate('gallery.title') }}</h2>
@@ -82,7 +81,7 @@ import { TranslationService } from '../../services/translation.service';
       </div>
     </section>
   `,
-  styles: [`
+    styles: [`
     .gallery-section {
       padding: var(--spacing-xl) var(--spacing-lg);
       background-color: var(--gray-light);

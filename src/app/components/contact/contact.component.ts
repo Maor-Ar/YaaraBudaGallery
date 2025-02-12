@@ -5,10 +5,9 @@ import { TranslationService } from '../../services/translation.service';
 import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  template: `
+    selector: 'app-contact',
+    imports: [CommonModule, ReactiveFormsModule],
+    template: `
     <section class="contact-section" [class.rtl]="isRtl">
       <div class="section-header">
         <h2>{{ translate('contact.title') }}</h2>
@@ -129,7 +128,7 @@ import { FirebaseService } from '../../services/firebase.service';
       </div>
     </section>
   `,
-  styles: [`
+    styles: [`
     .contact-section {
       padding: var(--spacing-xl) var(--spacing-lg);
       background-color: var(--gray-light);

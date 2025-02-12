@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { TranslationService, Language } from '../../../services/translation.service';
 
 @Component({
-  selector: 'app-language-switcher',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-language-switcher',
+    imports: [CommonModule],
+    template: `
     <div class="language-switcher" [class.rtl]="isRtl">
       <button
         class="lang-btn"
@@ -25,7 +24,7 @@ import { TranslationService, Language } from '../../../services/translation.serv
       </button>
     </div>
   `,
-  styles: [`
+    styles: [`
     .language-switcher {
       display: flex;
       align-items: center;

@@ -3,6 +3,19 @@
 @import 'styles/variables';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
+@use 'sass:math';
+
+// Variables
+$font-primary: 'Heebo', sans-serif;
+$image-aspect-ratio: math.div(3, 2);
+
+
+// Export variables for JavaScript usage
+:export {
+  fontPrimary: $font-primary;
+  imageAspectRatio: $image-aspect-ratio;
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;

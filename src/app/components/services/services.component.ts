@@ -10,10 +10,9 @@ interface Service {
 }
 
 @Component({
-  selector: 'app-services',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-services',
+    imports: [CommonModule],
+    template: `
     <section class="services-section" [class.rtl]="isRtl">
       <div class="section-header">
         <h2>{{ translate('services.title') }}</h2>
@@ -80,7 +79,7 @@ interface Service {
       </div>
     </section>
   `,
-  styles: [`
+    styles: [`
     .services-section {
       padding: var(--spacing-xl) var(--spacing-lg);
       background-color: var(--gray-light);

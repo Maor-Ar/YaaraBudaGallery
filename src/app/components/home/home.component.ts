@@ -7,10 +7,9 @@ import { LazyImageDirective } from '../../directives/lazy-image.directive';
 import { LoadingSpinnerComponent } from '../shared/loading-spinner/loading-spinner.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, RouterModule, LazyImageDirective, LoadingSpinnerComponent],
-  template: `
+    selector: 'app-home',
+    imports: [CommonModule, RouterModule, LazyImageDirective, LoadingSpinnerComponent],
+    template: `
     <main class="home-page" [class.rtl]="isRtl">
       <!-- Hero Section -->
       <section class="hero">
@@ -112,7 +111,7 @@ import { LoadingSpinnerComponent } from '../shared/loading-spinner/loading-spinn
       </section>
     </main>
   `,
-  styles: [`
+    styles: [`
     .home-page {
       &.rtl {
         direction: rtl;

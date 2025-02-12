@@ -6,10 +6,9 @@ import { TranslationService } from '../../../services/translation.service';
 import { ArtworkService, Artwork } from '../../../services/artwork.service';
 
 @Component({
-  selector: 'app-admin-dashboard',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  template: `
+    selector: 'app-admin-dashboard',
+    imports: [CommonModule, RouterModule],
+    template: `
     <div class="dashboard-container" [class.rtl]="isRtl">
       <header class="dashboard-header">
         <h1>{{ translate('admin.dashboard.title') }}</h1>
@@ -112,7 +111,7 @@ import { ArtworkService, Artwork } from '../../../services/artwork.service';
       </div>
     </div>
   `,
-  styles: [`
+    styles: [`
     .dashboard-container {
       min-height: 100vh;
       background-color: var(--gray-light);

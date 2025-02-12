@@ -6,10 +6,9 @@ import { FirebaseService } from '../../../services/firebase.service';
 import { TranslationService } from '../../../services/translation.service';
 
 @Component({
-  selector: 'app-admin-login',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  template: `
+    selector: 'app-admin-login',
+    imports: [CommonModule, ReactiveFormsModule],
+    template: `
     <div class="login-container" [class.rtl]="isRtl">
       <div class="login-card">
         <h1>{{ translate('admin.login.title') }}</h1>
@@ -69,7 +68,7 @@ import { TranslationService } from '../../../services/translation.service';
       </div>
     </div>
   `,
-  styles: [`
+    styles: [`
     .login-container {
       min-height: 100vh;
       display: flex;
