@@ -1,0 +1,82 @@
+<section class="gallery-section">
+  <div class="container">
+    <h1>Gallery</h1>
+
+    <!-- Filters -->
+    <div class="filters">
+      <div class="search-box">
+        <input type="text" 
+               [(ngModel)]="searchTerm" 
+               (ngModelChange)="filterArtworks()"
+               placeholder="Search artworks...">
+      </div>
+
+      <div class="category-filters">
+        <button *ngFor="let category of categories"
+                class="filter-btn"
+                [class.active]="selectedCategory === category"
+                (click)="filterByCategory(category)">
+          {{ category }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+      <div *ngFor="let artwork of getCurrentPageItems()"
+           class="gallery-item"
+           (click)="openLightbox(artwork)">
+        <div class="artwork-card">
+          <div class="artwork-image"
+               [style.backgroundImage]="'url(' + artwork.imageUrl + ')'">
+            <div class="artwork-overlay">
+              <div class="artwork-info">
+                <h3>{{ artwork.title }}</h3>
+                <p>{{ artwork.description }}</p>
+                <p class="price" *ngIf="artwork.price">{{ artwork.price | currency }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" *ngIf="totalPages > 1">
+      <button (click)="changePage(currentPage - 1)"
+              [disabled]="currentPage === 1"
+              class="btn btn-secondary">
+        Previous
+      </button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="changePage(currentPage + 1)"
+              [disabled]="currentPage === totalPages"
+              class="btn btn-secondary">
+        Next
+      </button>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" *ngIf="selectedArtwork">
+    <button class="close-btn" (click)="closeLightbox()">×</button>
+    <div class="lightbox-content">
+      <div class="lightbox-image">
+        <img [src]="selectedArtwork.imageUrl" [alt]="selectedArtwork.title">
+      </div>
+      <div class="lightbox-info">
+        <h2>{{ selectedArtwork.title }}</h2>
+        <p>{{ selectedArtwork.description }}</p>
+        <p class="category">Category: {{ selectedArtwork.category }}</p>
+        <p class="price" *ngIf="selectedArtwork.price">
+          Price: {{ selectedArtwork.price | currency }}
+        </p>
+        <button class="btn btn-primary"
+                [routerLink]="['/contact']"
+                (click)="closeLightbox()">
+          Inquire About This Piece
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

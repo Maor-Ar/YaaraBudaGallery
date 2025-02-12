@@ -1,0 +1,28 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">
+        <a routerLink="/">Yaara Buda</a>
+      </div>
+      
+      <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" [class.active]="isMenuOpen">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/gallery" routerLinkActive="active">Gallery</a></li>
+        <li><a routerLink="/services" routerLinkActive="active">Services</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      </ul>
+
+      <div class="language-selector">
+        <button (click)="switchLanguage('en')" [class.active]="currentLang === 'en'">EN</button>
+        <span>|</span>
+        <button (click)="switchLanguage('he')" [class.active]="currentLang === 'he'">HE</button>
+      </div>
+    </nav>
+  </div>
+</header>

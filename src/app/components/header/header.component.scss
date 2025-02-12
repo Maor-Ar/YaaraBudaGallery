@@ -1,0 +1,144 @@
+@import '../../../styles/variables';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  padding: $spacing-md 0;
+  transition: all $transition-speed $transition-ease;
+  z-index: 1000;
+
+  &.scrolled {
+    background-color: $white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: $spacing-sm 0;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  a {
+    font-family: $font-secondary;
+    font-size: 1.5rem;
+    color: $old-burgundy;
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0 $spacing-md;
+
+    a {
+      color: $old-burgundy;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color $transition-speed $transition-ease;
+
+      &:hover,
+      &.active {
+        color: $mystic;
+      }
+    }
+  }
+}
+
+.language-selector {
+  button {
+    background: none;
+    border: none;
+    color: $old-burgundy;
+    cursor: pointer;
+    padding: $spacing-xs;
+    font-weight: 500;
+    transition: color $transition-speed $transition-ease;
+
+    &:hover,
+    &.active {
+      color: $mystic;
+    }
+  }
+
+  span {
+    color: $old-burgundy;
+    margin: 0 $spacing-xs;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-xs;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $old-burgundy;
+    transition: all $transition-speed $transition-ease;
+  }
+
+  &.active {
+    span {
+      &:first-child {
+        transform: translateY(9px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:last-child {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-md 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all $transition-speed $transition-ease;
+    pointer-events: none;
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    li {
+      margin: $spacing-sm 0;
+    }
+  }
+}

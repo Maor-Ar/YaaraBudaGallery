@@ -1,0 +1,159 @@
+// Colors
+$desert-sand: #DBBEA1;
+$burnished-brown: #A37B73;
+$old-burgundy: #43242A;
+$mystic: #B4A6AB;
+
+$white: #FFFFFF;
+$black: #000000;
+$gray-light: #F5F5F5;
+$gray-medium: #E0E0E0;
+$gray-dark: #666666;
+
+// Typography
+$font-family-primary: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$font-family-secondary: 'Heebo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+$font-size-xs: 0.75rem;   // 12px
+$font-size-sm: 0.875rem;  // 14px
+$font-size-md: 1rem;      // 16px
+$font-size-lg: 1.125rem;  // 18px
+$font-size-xl: 1.25rem;   // 20px
+$font-size-2xl: 1.5rem;   // 24px
+$font-size-3xl: 2rem;     // 32px
+
+// Spacing
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 4rem;     // 64px
+
+// Breakpoints
+$breakpoint-xs: 320px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-2xl: 1400px;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// Transitions
+$transition-speed: 0.3s;
+$transition-speed-fast: 0.15s;
+$transition-speed-slow: 0.5s;
+$transition-ease: ease-in-out;
+
+// Borders
+$border-radius-xs: 0.25rem;  // 4px
+$border-radius-sm: 0.5rem;   // 8px
+$border-radius-md: 0.75rem;  // 12px
+$border-radius-lg: 1rem;     // 16px
+$border-radius-full: 9999px;
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+// Grid
+$container-padding: $spacing-md;
+$grid-gap: $spacing-md;
+$grid-columns: 12;
+
+// Buttons
+$btn-padding-y: $spacing-sm;
+$btn-padding-x: $spacing-lg;
+$btn-border-radius: $border-radius-full;
+$btn-transition: all $transition-speed $transition-ease;
+
+// Forms
+$input-height: 3rem;
+$input-padding-y: $spacing-sm;
+$input-padding-x: $spacing-md;
+$input-border-radius: $border-radius-md;
+$input-border-color: $gray-medium;
+$input-focus-border-color: $mystic;
+$input-transition: border-color $transition-speed $transition-ease;
+
+// Images
+$image-aspect-ratio: 3/2;
+$thumbnail-size: 150px;
+
+// RTL Support
+$start: left;
+$end: right;
+$margin-start: margin-left;
+$margin-end: margin-right;
+$padding-start: padding-left;
+$padding-end: padding-right;
+$border-start: border-left;
+$border-end: border-right;
+$text-align-start: left;
+$text-align-end: right;
+
+[dir="rtl"] {
+  $start: right;
+  $end: left;
+  $margin-start: margin-right;
+  $margin-end: margin-left;
+  $padding-start: padding-right;
+  $padding-end: padding-left;
+  $border-start: border-right;
+  $border-end: border-left;
+  $text-align-start: right;
+  $text-align-end: left;
+}
+
+// Utility Classes
+.text-start {
+  text-align: $text-align-start !important;
+}
+
+.text-end {
+  text-align: $text-align-end !important;
+}
+
+.ms-auto {
+  margin-#{$start}: auto !important;
+}
+
+.me-auto {
+  margin-#{$end}: auto !important;
+}
+
+.ps-0 {
+  padding-#{$start}: 0 !important;
+}
+
+.pe-0 {
+  padding-#{$end}: 0 !important;
+}
+
+.border-start {
+  border-#{$start}: 1px solid $gray-medium !important;
+}
+
+.border-end {
+  border-#{$end}: 1px solid $gray-medium !important;
+}
+
+// Font Settings for RTL
+[dir="rtl"] {
+  font-family: $font-family-primary;
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-secondary;
+  }
+}

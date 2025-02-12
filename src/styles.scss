@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: $font-primary;
+  color: $old-burgundy;
+  background-color: $white;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary;
+  font-weight: 600;
+  color: $old-burgundy;
+}
+
+/* Global Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.section {
+  padding: $spacing-xl 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: $spacing-sm $spacing-lg;
+  border: none;
+  border-radius: 4px;
+  font-family: $font-primary;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-speed $transition-ease;
+
+  &-primary {
+    background-color: $mystic;
+    color: $white;
+
+    &:hover {
+      background-color: darken($mystic, 10%);
+    }
+  }
+
+  &-secondary {
+    background-color: $desert-sand;
+    color: $old-burgundy;
+
+    &:hover {
+      background-color: darken($desert-sand, 10%);
+    }
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn $transition-speed ease-in;
+}
+
+/* Responsive Design */
+@media (max-width: $breakpoint-md) {
+  .container {
+    padding: 0 $spacing-sm;
+  }
+}
+
+/* Material Design Overrides */
+.mat-mdc-card {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}

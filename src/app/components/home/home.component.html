@@ -1,0 +1,43 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="artist-name">Yaara Buda</h1>
+    <p class="artist-description">Artist | Tattoo Designer | Event Cartoonist</p>
+    <div class="cta-buttons">
+      <a routerLink="/services" class="btn btn-primary">My Services</a>
+      <a routerLink="/contact" class="btn btn-secondary">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<section class="featured-works section">
+  <div class="container">
+    <h2>Featured Works</h2>
+    <div class="works-grid">
+      <div class="work-item" *ngFor="let work of featuredWorks">
+        <div class="work-image" [style.backgroundImage]="'url(' + work.imageUrl + ')'">
+          <div class="work-overlay">
+            <h3>{{ work.title }}</h3>
+            <p>{{ work.description }}</p>
+            <a routerLink="/contact" class="btn btn-primary">Contact for Purchase</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>As a multidisciplinary artist, I bring creativity to life through various mediums. From custom art pieces to tattoo designs and event cartoons, my work is a reflection of both technical precision and artistic expression.</p>
+        <a routerLink="/gallery" class="btn btn-secondary">View Gallery</a>
+      </div>
+      <div class="about-image">
+        <!-- Placeholder for artist image -->
+        <div class="artist-image"></div>
+      </div>
+    </div>
+  </div>
+</section>
